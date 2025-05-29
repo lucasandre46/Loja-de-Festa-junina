@@ -1,0 +1,11 @@
+@import url(./index_sect.css);
+@import url(./../header.css);
+
+body{
+    margin: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    overflow: hidden;
+}
