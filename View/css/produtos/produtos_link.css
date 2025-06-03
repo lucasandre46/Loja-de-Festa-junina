@@ -1,5 +1,7 @@
 @import url(./produtos_sect.css);
+
 @import url(./../header.css);
+@import url(./../footer.css);
 
 body{
     margin: 0;

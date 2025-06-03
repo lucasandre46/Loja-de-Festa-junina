@@ -2,30 +2,49 @@ section {
     width: 100vw;
     height: 90vh;
 
-    /* alterar o height com js, de acordo com a quatidade de cartoes */
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    #textoProduts {
+        width: 80vw;
+        height: 8vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        padding-top: 2vh;
+
+        font-size: 2vh;
+
+        h1 {
+            margin: 0;
+            padding: 0;
+        }
+    }
+
     #sectionCartoes {
         width: 80vw;
         height: 60vh;
-        margin: 0vh 10vw;
-
+        margin: 0 auto;
         padding: 1vw;
 
         display: grid;
-        grid-gap: 2vw;
-        grid-template-columns: 27vw 27vw 27vw;
+        gap: 2vw;
+        grid-template-columns: repeat(3, 22vw);
+        /* Mantendo o tamanho original dos cartões */
+        justify-content: center;
+        /* Garante alinhamento centralizado */
 
         .cartao {
             width: 20vw;
             height: 25vh;
-
             background-color: blue;
-
             display: flex;
 
             #nomeDesc {
