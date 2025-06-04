@@ -1,13 +1,15 @@
 footer {
     width: 100vw;
-    height: 10vh;
+    height: 5vh;
 
-    position: absolute;
+    position: fixed;
     bottom: 0vh;
 
     display: flex;
     justify-content: center;
     align-items: center;
+
+    background-color: rgb(200, 200,0);
 
     #boxTextFooter {
         width: 80vw;

@@ -64,6 +64,12 @@ export function criarCartoes() {
         botao.id = "addCarrinho";
         botao.textContent = "Adicionar ao Carrinho";
 
+        const ibotao = document.createElement("i");
+        ibotao.id = "ibotao";
+        ibotao.classList = "fa-solid fa-cart-shopping"
+
+        botao.appendChild(ibotao);
+
         imgBtn.appendChild(imgCartao);
         imgBtn.appendChild(botao);
 

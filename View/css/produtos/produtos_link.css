@@ -3,11 +3,12 @@
 @import url(./../header.css);
 @import url(./../footer.css);
 
-body{
+body {
     margin: 0;
 
     width: 100vw;
-    height: 100vh;
+    height: 110vh;
 
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
