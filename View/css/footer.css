@@ -1,4 +1,4 @@
-footer{
+footer {
     width: 100vw;
     height: 10vh;
 
@@ -6,6 +6,13 @@ footer{
     bottom: 0vh;
 
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
+
+    #boxTextFooter {
+        width: 80vw;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
 }
