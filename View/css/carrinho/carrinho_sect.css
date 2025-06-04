@@ -1,3 +1,13 @@
+section h1 {
+    font-size: 1.5vw;
+}
+
+section button,
+p,
+i {
+    font-size: 1.5vh;
+}
+
 section {
     width: 100vw;
     height: 85vh;
@@ -9,4 +19,110 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    #textoCarrinho {
+        height: 5vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        font-size: 2vh;
+
+        h1 {
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    #showCarrinho {
+        width: 80vw;
+        height: 65vh;
+
+        margin: 0 auto;
+        padding: 1vw;
+
+        display: grid;
+        gap: 2vw;
+        grid-template-columns: repeat(3, 22vw);
+        /* Mantendo o tamanho original dos cartões */
+        justify-content: center;
+        /* Garante alinhamento centralizado */
+
+        overflow-y: scroll;
+
+        .cartao {
+            width: 20vw;
+            height: 25vh;
+            background-color: blue;
+            display: flex;
+
+            #nomeDesc {
+                width: 7.5vw;
+                height: 25vh;
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+            }
+
+            #imgBtn {
+                width: 12.5vw;
+                height: 25vh;
+
+                #imgCartao {
+                    width: 12.5vw;
+                    height: 20vh;
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    #foto {
+                        width: 10vw;
+                        height: 15vh;
+                    }
+                }
+
+                #delCarrinho {
+                    width: 10vw;
+                    height: 4vh;
+
+                    border: none;
+                    border-radius: 1.5vh;
+
+                    margin: 0.5vh 1.175vw;
+                }
+            }
+        }
+    }
+
+    #delCarrinho:hover {
+        cursor: pointer;
+        transform: scale(1.01);
+    }
+
+    #btnsCarrinho {
+        height: 10vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .btnCart {
+            width: 10vw;
+            height: 4vh;
+
+            border: none;
+            border-radius: 1.5vh;
+
+            margin: 0.5vh 1.175vw;
+        }
+
+        .btnCart:hover {
+            cursor: pointer;
+            transform: scale(1.01);
+        }
+    }
 }

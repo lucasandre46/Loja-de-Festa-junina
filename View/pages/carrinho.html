@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loja de ...</title>
     <link rel="stylesheet" href="./../css/carrinho/carrinho_link.css">
-    <script type="module" src=""></script>
+    <script type="module" src="./../../Controller/carrinho/carrinho.js"></script>
     <script src="https://kit.fontawesome.com/a451098362.js" crossorigin="anonymous"></script>
 </head>
 
@@ -27,15 +27,16 @@
 
     </header>
 
-    <section>
-        <h1 id="statusCarrinho">Seu carrinho está vazio.</h1>
-        <div id="">
+    <section id="sectionCart">
+        <div id="textoCarrinho">
+            <h1 id="statusCarrinho">Seu carrinho está vazio.</h1>
+        </div>
+        <div id="showCarrinho">
 
         </div>
         <div id="btnsCarrinho">
-            <button>Comprar Mais</button>
-            <button>Cancelar/Limpar</button>
-            <button>Fechar Pedido</button>
+            <button class="btnCart" onclick="window.location.href='./produtos.html'">Continuar comprando</button>
+            <button class="btnCart">Finalizar Pedido</button>
         </div>
     </section>
 
