@@ -62,7 +62,8 @@ export function criarCartoes() {
 
         const botao = document.createElement("button");
         botao.id = "addCarrinho";
-        botao.textContent = "Adicionar ao Carrinho";
+        // botao.textContent = "Adicionar ao Carrinho";
+        botao.textContent = "";
 
         const ibotao = document.createElement("i");
         ibotao.id = "ibotao";

@@ -20,6 +20,7 @@ section {
         left: 0vw;
 
         display: flex;
+        transition: left 0.5s ease-in-out;
 
         .banner {
             width: 70vw;
@@ -27,10 +28,10 @@ section {
 
             margin: 0vh 15vw;
         }
-    }   
+    }
 
-    #btns_banners{
-        width: 20vw;
+    #btns_banners {
+        width: 40vw;
         height: 7vh;
         display: flex;
         justify-content: space-evenly;
@@ -40,14 +41,21 @@ section {
         top: 70vh;
 
         z-index: 2;
-        
-        .btn_banner{
-            width: 3vw;
-            height: 3vw;
 
-            border-radius: 50%;
+        .btn_banner {
+            width: 7vw;
+            height: 5vh;
 
-            background-color: cyan;
+            border-radius: 1vw;
+            border: none;
+
+            background-color: rgb(234, 29, 44);
+            color: white;
+        }
+
+        .btn_banner:hover {
+            transform: scale(1.1);
+            cursor: pointer;
         }
     }
 }
