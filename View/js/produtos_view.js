@@ -1,25 +1,13 @@
 // Simulação de um "banco de dados"
 const produtos = [
-    { nome: "Produto 1", descricao: "Descrição do Produto 1", imgSrc: "img1.jpg" },
-    { nome: "Produto 2", descricao: "Descrição do Produto 2", imgSrc: "img2.jpg" },
-    { nome: "Produto 3", descricao: "Descrição do Produto 3", imgSrc: "img3.jpg" },
-    { nome: "Produto 4", descricao: "Descrição do Produto 4", imgSrc: "img4.jpg" },
-    { nome: "Produto 5", descricao: "Descrição do Produto 5", imgSrc: "img5.jpg" },
-    { nome: "Produto 6", descricao: "Descrição do Produto 6", imgSrc: "img6.jpg" },
-    { nome: "Produto 7", descricao: "Descrição do Produto 7", imgSrc: "img7.jpg" },
-    { nome: "Produto 8", descricao: "Descrição do Produto 8", imgSrc: "img8.jpg" },
-    { nome: "Produto 9", descricao: "Descrição do Produto 9", imgSrc: "img9.jpg" },
-    { nome: "Produto 10", descricao: "Descrição do Produto 10", imgSrc: "img10.jpg" },
-    { nome: "Produto 11", descricao: "Descrição do Produto 11", imgSrc: "img11.jpg" },
-    { nome: "Produto 12", descricao: "Descrição do Produto 12", imgSrc: "img12.jpg" },
-    { nome: "Produto 13", descricao: "Descrição do Produto 13", imgSrc: "img13.jpg" },
-    { nome: "Produto 14", descricao: "Descrição do Produto 14", imgSrc: "img14.jpg" },
-    { nome: "Produto 15", descricao: "Descrição do Produto 15", imgSrc: "img15.jpg" },
-    { nome: "Produto 16", descricao: "Descrição do Produto 16", imgSrc: "img16.jpg" },
-    { nome: "Produto 17", descricao: "Descrição do Produto 17", imgSrc: "img17.jpg" },
-    { nome: "Produto 18", descricao: "Descrição do Produto 18", imgSrc: "img18.jpg" },
-    { nome: "Produto 19", descricao: "Descrição do Produto 19", imgSrc: "img19.jpg" },
-    { nome: "Produto 20", descricao: "Descrição do Produto 20", imgSrc: "img20.jpg" },
+    { nome: "Crépe De Frango Cremoso", descricao: "Crépe salgado de Frango", imgSrc: "./../../Model/Frango.jpeg" },
+    { nome: "Crépe De Pizza", descricao: "Crépe salgado de Presunto e Queijo", imgSrc: "./../../Model/Pizza.jpeg" },
+    { nome: "Crépe Doce", descricao: "Crépe doce de Chocolate e Morango", imgSrc: "./../../Model/Frango Morango.jpeg" },
+    { nome: "Combo ", descricao: "Crépe salgado de Frango e um copo de 300ml de Refri", imgSrc: "./../../Model/Frango Morango.jpeg" },
+    { nome: "Combo", descricao: "Crépe salgado de Presunto e Queijo e um copo de 300ml de Refri", imgSrc: "./../../Model/Frango Morango.jpeg" },
+    { nome: "Combo doce", descricao: "Crépe doce de Chocolate e Morango e um copo de 300ml de Refri", imgSrc: "./../../Model/Frango Morango.jpeg" },
+    { nome: "Super Combo", descricao: "Crépe salgado de Frango/Presunto e Queijo com Crépe doce de Chocolate e Morango e um copo de 300ml de Refri", imgSrc: "./../../Model/Frango Morango.jpeg" },
+    { nome: "Refrigerante", descricao: "Um copo de Refri de 300ml", imgSrc: "./../../Model/refri.jpeg" },
 ];
 
 export function criarCartoes() {
