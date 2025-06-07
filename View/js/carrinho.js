@@ -1,26 +1,35 @@
-// Simulação de um "banco de dados"
-export const carrinhos = [
-    { nome: "Produto 1", descricao: "Descrição do Produto 1", imgSrc: "img1.jpg" },
-    { nome: "Produto 2", descricao: "Descrição do Produto 2", imgSrc: "img2.jpg" },
-    { nome: "Produto 3", descricao: "Descrição do Produto 3", imgSrc: "img3.jpg" },
-    { nome: "Produto 4", descricao: "Descrição do Produto 4", imgSrc: "img4.jpg" },
-    { nome: "Produto 5", descricao: "Descrição do Produto 5", imgSrc: "img5.jpg" },
-    { nome: "Produto 6", descricao: "Descrição do Produto 6", imgSrc: "img6.jpg" },
-    { nome: "Produto 7", descricao: "Descrição do Produto 7", imgSrc: "img7.jpg" },
-    { nome: "Produto 8", descricao: "Descrição do Produto 8", imgSrc: "img8.jpg" },
-    { nome: "Produto 9", descricao: "Descrição do Produto 9", imgSrc: "img9.jpg" },
-];
+import { pegarCartoes } from "./../../Controller/services/produtos_S.js";
+import { pegarPedidos } from "./../../Controller/services/produtos_S.js";
 
-console.log("Achou a pasta")
-
-export function criarCarrinho() {
+export async function criarCarrinho() {
     const sectionCartoes = document.getElementById("showCarrinho");
     const sectionProduts = document.getElementById("sectionCart");
 
+    const carrinhos = await pegarPedidos();
+    const produtos = await pegarCartoes();
+
+    console.log("pegou os pedidos e produtos");
+
+    // Verifica se os dados retornaram corretamente
+    console.log("Carrinhos:", carrinhos);
+    console.log("Produtos:", produtos);
+
+    // Adicionando verificação de array
+    if (!Array.isArray(carrinhos)) {
+        console.error("Erro: 'carrinhos' não é um array válido:", carrinhos);
+        return;
+    }
+
     for (let i = 0; i < carrinhos.length; i++) {
         const carrinho = carrinhos[i];
+        const produto = produtos.find(p => p.id === carrinho.produtoId);
 
-        // Criando o cartão
+        if (!produto) {
+            console.warn("Produto não encontrado para carrinho:", carrinho);
+            continue;
+        }
+
+        // Criando o cartão do produto
         const cartao = document.createElement("div");
         cartao.classList.add("cartao");
 
@@ -29,10 +38,10 @@ export function criarCarrinho() {
         nomeDesc.id = "nomeDesc";
 
         const titulo = document.createElement("h1");
-        titulo.textContent = carrinho.nome;
+        titulo.textContent = produto.nome;
 
         const descricao = document.createElement("p");
-        descricao.textContent = carrinho.descricao;
+        descricao.textContent = produto.descricao;
 
         nomeDesc.appendChild(titulo);
         nomeDesc.appendChild(descricao);
@@ -46,20 +55,14 @@ export function criarCarrinho() {
 
         const img = document.createElement("img");
         img.id = "foto";
-        img.src = carrinho.imgSrc;
-        img.alt = carrinho.nome;
+        img.src = produto.imgSrc;
+        img.alt = produto.nome;
 
         imgCartao.appendChild(img);
 
         const botao = document.createElement("button");
         botao.id = "delCarrinho";
         botao.textContent = "Remover do Carrinho";
-
-        // const ibotao = document.createElement("i");
-        // ibotao.id = "ibotao";
-        // ibotao.classList = "fa-solid fa-cart-shopping"
-
-        // botao.appendChild(ibotao);
 
         imgBtn.appendChild(imgCartao);
         imgBtn.appendChild(botao);
@@ -71,13 +74,8 @@ export function criarCarrinho() {
         // Adicionando o cartão à seção
         sectionCartoes.appendChild(cartao);
 
-        console.log("Rodou o codigo")
-
-        sectionProduts.style.height = "90vh"
-
-        if (i >= 6 && (i - 6) % 3 === 0) {
-            const alturaAtual = parseInt(window.getComputedStyle(sectionProduts).height);
-            sectionProduts.style.height = `${alturaAtual + 30}vh`;
-        }
+        console.log("Produto adicionado ao carrinho:", produto.nome);
     }
+
+    sectionProduts.style.height = "90vh";
 }

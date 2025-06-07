@@ -1,5 +1,4 @@
 import { pegarCartoes } from "./../../Controller/services/produtos_S.js";
-// import { adicionarAoCarrinho } from "./../../Controller/services/produtos_S.js";
 import { adicionarAoCarrinho } from"./../../Controller/login.js"
 
 export async function criarCartoes() {
