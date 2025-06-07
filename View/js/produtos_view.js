@@ -1,4 +1,6 @@
 import { pegarCartoes } from "./../../Controller/services/produtos_S.js";
+// import { adicionarAoCarrinho } from "./../../Controller/services/produtos_S.js";
+import { adicionarAoCarrinho } from"./../../Controller/login.js"
 
 export async function criarCartoes() {
     const sectionCartoes = document.getElementById("sectionCartoes");
@@ -44,6 +46,7 @@ export async function criarCartoes() {
         const botao = document.createElement("button");
         botao.id = "addCarrinho";
         botao.textContent = "";
+        botao.addEventListener("click", () => adicionarAoCarrinho(produtos[i]));
 
         const ibotao = document.createElement("i");
         ibotao.id = "ibotao";

@@ -1,6 +1,6 @@
 export async function cadastrarUx(nomeUX, turma, nChamada,) {
     try {
-        const response = await fetch('https://back-end-crepes.vercel.app/produtos', {
+        const response = await fetch('https://back-end-crepes.vercel.app/usuarios', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

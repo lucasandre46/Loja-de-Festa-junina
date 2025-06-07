@@ -20,9 +20,48 @@ export async function pegarCartoes() {
     console.log("pegou")
 }
 
-// export async function cadastrarCartao(nome, descricao, imgSrc,) {
+// import { bdProprio } from "./../login.js"; 
+// console.log(bdProprio)
+
+// export async function adicionarAoCarrinho(produto) {
 //     try {
-//         const response = await fetch('https://back-end-crepes.vercel.app/produtos', {
+//         // Pegamos o primeiro usuário cadastrado em bdProprio (se houver)
+//         const usuario = bdProprio.length > 0 ? bdProprio[0] : null;
+
+//         if (!usuario) {
+//             alert("Nenhum usuário cadastrado! Faça login primeiro.");
+//             return;
+//         }
+
+//         const response = await fetch('https://back-end-crepes.vercel.app/usuarios', {
+//             method: 'POST',
+//             headers: {
+//                 'Content-Type': 'application/json',
+//             },
+//             body: JSON.stringify({
+//                 usuario: {
+//                     nomeUx: usuario.nome,
+//                     turma: usuario.turma,
+//                     nChamada: usuario.chamada
+//                 },
+//                 produtoId: produto.id
+//             }),
+//         });
+
+//         if (response.status === 200) {
+//             console.log("Produto adicionado ao carrinho!");
+//         } else {
+//             alert("Erro ao adicionar ao carrinho.");
+//         }
+//     }
+//     catch (e) {
+//         console.error(e);
+//     }
+// }
+
+// export async function cadastrarProdutoNoCarrinho(nome, descricao, imgSrc,) {
+//     try {
+//         const response = await fetch('https://back-end-crepes.vercel.app/usuarios', {
 //             method: 'POST',
 //             headers: {
 //                 'Content-Type': 'application/json',
@@ -33,7 +72,7 @@ export async function pegarCartoes() {
 //                 imgSrc: imgSrc,
 //             }),
 //         });
-//         criarCartoes()
+//         // criarCartoes()
 //     }
 //     catch (e) {
 //         console.log(e)
