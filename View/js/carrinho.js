@@ -14,14 +14,24 @@ export async function criarCarrinho() {
     console.log("Carrinhos:", carrinhos);
     console.log("Produtos:", produtos);
 
-    // Adicionando verificação de array
     if (!Array.isArray(carrinhos)) {
         console.error("Erro: 'carrinhos' não é um array válido:", carrinhos);
         return;
     }
 
-    for (let i = 0; i < carrinhos.length; i++) {
-        const carrinho = carrinhos[i];
+    // Obtendo o nome do usuário logado
+    const bdProprio = JSON.parse(localStorage.getItem('bdProprio')) || [];
+    const usuarioLogado = bdProprio.length > 0 ? bdProprio[0].nome : null;
+
+    if (!usuarioLogado) {
+        console.error("Nenhum usuário logado encontrado.");
+        return;
+    }
+
+    // Filtrando os pedidos apenas do usuário logado
+    const carrinhosUsuario = carrinhos.filter(carrinho => carrinho.usuario.nomeUx === usuarioLogado);
+
+    for (const carrinho of carrinhosUsuario) {
         const produto = produtos.find(p => p.id === carrinho.produtoId);
 
         if (!produto) {
