@@ -94,7 +94,7 @@ export async function adicionarAoCarrinho(produto) {
         });
 
         if (response.status === 201) {
-            console.log("Produto adicionado ao carrinho!");
+            alert("Produto adicionado ao carrinho!");
         } else {
             alert("Erro ao adicionar ao carrinho.");
         }
