@@ -1,4 +1,4 @@
-export async function cadastrarUx(nome, turma, nChamada,) {
+export async function cadastrarUx(nomeUX, turma, nChamada,) {
     try {
         const response = await fetch('https://back-end-crepes.vercel.app/produtos', {
             method: 'POST',
@@ -6,7 +6,7 @@ export async function cadastrarUx(nome, turma, nChamada,) {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                nome: nome,
+                nomeUx: nomeUx,
                 turma: turma,
                 nChamada: nChamada,
             }),
