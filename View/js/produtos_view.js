@@ -1,21 +1,13 @@
-// Simulação de um "banco de dados"
-const produtos = [
-    { nome: "Crépe De Frango Cremoso", descricao: "Crépe salgado de Frango", imgSrc: "./../../Model/Frango.jpeg" },
-    { nome: "Crépe De Pizza", descricao: "Crépe salgado de Presunto e Queijo", imgSrc: "./../../Model/Pizza.jpeg" },
-    { nome: "Crépe Doce", descricao: "Crépe doce de Chocolate e Morango", imgSrc: "./../../Model/Frango Morango.jpeg" },
-    { nome: "Combo ", descricao: "Crépe salgado de Frango e um copo de 300ml de Refri", imgSrc: "./../../Model/Frango Morango.jpeg" },
-    { nome: "Combo", descricao: "Crépe salgado de Presunto e Queijo e um copo de 300ml de Refri", imgSrc: "./../../Model/Frango Morango.jpeg" },
-    { nome: "Combo doce", descricao: "Crépe doce de Chocolate e Morango e um copo de 300ml de Refri", imgSrc: "./../../Model/Frango Morango.jpeg" },
-    { nome: "Super Combo", descricao: "Crépe salgado de Frango/Presunto e Queijo com Crépe doce de Chocolate e Morango e um copo de 300ml de Refri", imgSrc: "./../../Model/Frango Morango.jpeg" },
-    { nome: "Refrigerante", descricao: "Um copo de Refri de 300ml", imgSrc: "./../../Model/refri.jpeg" },
-];
+import { pegarCartoes } from "./../../Controller/services/produtos_S.js";
 
-export function criarCartoes() {
+export async function criarCartoes() {
     const sectionCartoes = document.getElementById("sectionCartoes");
     const sectionProduts = document.getElementById("sectionProduts");
 
+    const produtos = await pegarCartoes()
+    console.log(produtos)
+
     for (let i = 0; i < produtos.length; i++) {
-        const produto = produtos[i];
 
         // Criando o cartão
         const cartao = document.createElement("div");
@@ -26,10 +18,11 @@ export function criarCartoes() {
         nomeDesc.id = "nomeDesc";
 
         const titulo = document.createElement("h1");
-        titulo.textContent = produto.nome;
+
+        titulo.textContent = produtos[i].nome;
 
         const descricao = document.createElement("p");
-        descricao.textContent = produto.descricao;
+        descricao.textContent = produtos[i].descricao;
 
         nomeDesc.appendChild(titulo);
         nomeDesc.appendChild(descricao);
@@ -43,14 +36,13 @@ export function criarCartoes() {
 
         const img = document.createElement("img");
         img.id = "foto";
-        img.src = produto.imgSrc;
-        img.alt = produto.nome;
+        img.src = "./../../Model/" + produtos[i].imgSrc + ".jpeg";
+        img.alt = produtos[i].nome;
 
         imgCartao.appendChild(img);
 
         const botao = document.createElement("button");
         botao.id = "addCarrinho";
-        // botao.textContent = "Adicionar ao Carrinho";
         botao.textContent = "";
 
         const ibotao = document.createElement("i");
