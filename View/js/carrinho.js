@@ -72,7 +72,13 @@ export async function criarCarrinho() {
 
         const botao = document.createElement("button");
         botao.id = "delCarrinho";
-        botao.textContent = "Remover do Carrinho";
+        // botao.textContent = "Remover do Carrinho";
+
+        const ibotao = document.createElement("i");
+        ibotao.id = "ibotao";
+        ibotao.classList = "fa-solid fa-xmark"
+
+        botao.appendChild(ibotao);
 
         imgBtn.appendChild(imgCartao);
         imgBtn.appendChild(botao);
