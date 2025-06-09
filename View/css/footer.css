@@ -8,7 +8,12 @@ footer {
     color: #3e3e3e;
     font-size: 2vh;
 
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
+    
     justify-content: center;
     align-items: center;
 
@@ -16,7 +21,13 @@ footer {
 
     #boxTextFooter {
         width: 80vw;
+
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
         display: flex;
+
         justify-content: space-evenly;
         align-items: center;
     }

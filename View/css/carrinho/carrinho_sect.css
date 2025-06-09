@@ -15,133 +15,185 @@ section {
     position: absolute;
     top: 10vh;
 
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
+
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
 
-    #textoCarrinho {
-        height: 5vh;
+#textoCarrinho {
+    height: 5vh;
 
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
 
-        font-size: 2vh;
+    justify-content: center;
+    align-items: center;
 
-        h1 {
-            margin: 0;
-            padding: 0;
-        }
-    }
+    font-size: 2vh;
+}
 
-    #showCarrinho {
-        width: 100vw;
-        height: 65vh;
+#showCarrinho {
+    width: 100vw;
+    height: 65vh;
 
-        margin: 0 auto;
-        padding: 1vw;
+    margin: 0 auto;
+    padding: 1vw;
 
-        display: grid;
-        gap: 2vw;
-        grid-template-columns: repeat(3, 22vw);
-        /* Mantendo o tamanho original dos cartões */
-        justify-content: center;
-        /* Garante alinhamento centralizado */
+    display: -ms-grid;
+    display: -moz-grid;
+    display: -webkit-grid;
+    display: grid;
 
-        overflow-y: scroll;
+    gap: 2vw;
+    grid-template-columns: repeat(3, 22vw);
+    justify-content: center;
+    overflow-y: scroll;
+}
 
-        .cartao {
-            width: 20vw;
-            height: 25vh;
-            border-radius: 0.5vw;
-            background-color: rgb(250, 250, 250);
-            color: #3e3e3e;
+.cartao {
+    width: 20vw;
+    height: 25vh;
 
-            display: flex;
-            padding-left: 1vw;
+    -webkit-border-radius: 0.5vw;
+    -moz-border-radius: 0.5vw;
+    border-radius: 0.5vw;
 
-            #nomeDesc {
-                width: 7.5vw;
-                height: 25vh;
+    background-color: rgb(250, 250, 250);
+    color: #3e3e3e;
 
-                display: flex;
-                flex-direction: column;
-                align-items: center;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
 
-            }
+    padding-left: 1vw;
+}
 
-            #imgBtn {
-                width: 12.5vw;
-                height: 23vh;
+#nomeDesc {
+    width: 7.5vw;
+    height: 25vh;
 
-                display: flex;
-                flex-direction: column;
-                align-items: center;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
 
-                #imgCartao {
-                    width: 12.5vw;
-                    height: 20vh;
+    flex-direction: column;
+    align-items: center;
+}
 
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
+#imgBtn {
+    width: 12.5vw;
+    height: 23vh;
 
-                    #foto {
-                        width: 10vw;
-                        height: 15vh;
-                    }
-                }
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
 
-                #delCarrinho {
-                    width: 7vw;
-                    height: 5vh;
+    flex-direction: column;
+    align-items: center;
+}
 
-                    border-radius: 1vw;
-                    border: none;
+#imgCartao {
+    width: 12.5vw;
+    height: 20vh;
 
-                    background-color: rgb(234, 29, 44);
-                    color: white;
-                }
-            }
-        }
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
 
-        .cartao:hover {
-            transform: scale(1.01);
+    justify-content: center;
+    align-items: center;
+}
 
-            box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.1);
-            -webkit-box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.1);
-            -moz-box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.1);
-        }
-    }
+#foto {
+    width: 10vw;
+    height: 15vh;
+}
 
-    #delCarrinho:hover {
-        cursor: pointer;
-        transform: scale(1.01);
-    }
+#delCarrinho {
+    width: 7vw;
+    height: 5vh;
 
-    #btnsCarrinho {
-        width: 20vw;
-        height: 10vh;
+    -webkit-border-radius: 1vw;
+    -moz-border-radius: 1vw;
+    border-radius: 1vw;
 
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
+    border: none;
+    background-color: rgb(234, 29, 44);
+    color: white;
+}
 
-        .btnCart {
-            width: 7vw;
-            height: 5vh;
+.cartao:hover {
+    -webkit-transform: scale(1.01);
+    -moz-transform: scale(1.01);
+    -ms-transform: scale(1.01);
+    -o-transform: scale(1.01);
+    transform: scale(1.01);
 
-            border-radius: 1vw;
-            border: none;
+    -webkit-box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.1);
+}
 
-            background-color: rgb(234, 29, 44);
-            color: white;
-        }
+#delCarrinho:hover {
+    cursor: pointer;
 
-        .btnCart:hover {
-            cursor: pointer;
-            transform: scale(1.01);
-        }
-    }
+    -webkit-transform: scale(1.01);
+    -moz-transform: scale(1.01);
+    -ms-transform: scale(1.01);
+    -o-transform: scale(1.01);
+    transform: scale(1.01);
+}
+
+#btnsCarrinho {
+    width: 20vw;
+    height: 10vh;
+
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.btnCart {
+    width: 7vw;
+    height: 5vh;
+
+    -webkit-border-radius: 1vw;
+    -moz-border-radius: 1vw;
+    border-radius: 1vw;
+
+    border: none;
+    background-color: rgb(234, 29, 44);
+    color: white;
+}
+
+.btnCart:hover {
+    cursor: pointer;
+
+    -webkit-transform: scale(1.01);
+    -moz-transform: scale(1.01);
+    -ms-transform: scale(1.01);
+    -o-transform: scale(1.01);
+    transform: scale(1.01);
 }

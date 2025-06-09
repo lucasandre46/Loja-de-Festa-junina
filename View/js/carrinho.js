@@ -1,9 +1,13 @@
 import { pegarCartoes } from "./../../Controller/services/produtos_S.js";
 import { pegarPedidos } from "./../../Controller/services/produtos_S.js";
+import { removerDoCarrinho } from "../../Controller/services/produtos_S.js";
 
 export async function criarCarrinho() {
     const sectionCartoes = document.getElementById("showCarrinho");
     const sectionProduts = document.getElementById("sectionCart");
+    const statusCarrinho = document.getElementById("statusCarrinho");
+
+    sectionCartoes.innerHTML = ""
 
     const carrinhos = await pegarPedidos();
     const produtos = await pegarCartoes();
@@ -30,6 +34,15 @@ export async function criarCarrinho() {
 
     // Filtrando os pedidos apenas do usuário logado
     const carrinhosUsuario = carrinhos.filter(carrinho => carrinho.usuario.nomeUx === usuarioLogado);
+
+    // Atualizando o status do carrinho
+    if (carrinhosUsuario.length === 0) {
+        statusCarrinho.textContent = "Seu carrinho está vazio.";
+    } else if (carrinhosUsuario.length === 1) {
+        statusCarrinho.textContent = "Você tem um produto no seu carrinho.";
+    } else {
+        statusCarrinho.textContent = `Você tem ${carrinhosUsuario.length} itens em seu carrinho.`;
+    }
 
     for (const carrinho of carrinhosUsuario) {
         const produto = produtos.find(p => p.id === carrinho.produtoId);
@@ -65,13 +78,15 @@ export async function criarCarrinho() {
 
         const img = document.createElement("img");
         img.id = "foto";
-        img.src = produto.imgSrc;
+        // img.src = produto.imgSrc;
+        img.src = "./../../Model/" + produto.imgSrc + ".jpeg";
         img.alt = produto.nome;
 
         imgCartao.appendChild(img);
 
         const botao = document.createElement("button");
         botao.id = "delCarrinho";
+        botao.addEventListener("click", () => removerDoCarrinho(produto));
         // botao.textContent = "Remover do Carrinho";
 
         const ibotao = document.createElement("i");

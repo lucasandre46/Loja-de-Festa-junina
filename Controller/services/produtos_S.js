@@ -44,3 +44,36 @@ export async function pegarPedidos() {
         return [];
     }
 }
+
+export async function removerDoCarrinho(produto) {
+    try {
+        // Obtendo o usuário logado do `localStorage`
+        const bdProprio = JSON.parse(localStorage.getItem('bdProprio')) || [];
+        const usuarioLogado = bdProprio.length > 0 ? bdProprio[0].nome : null;
+
+        if (!usuarioLogado) {
+            alert("Nenhum usuário logado encontrado!");
+            return;
+        }
+
+        const response = await fetch('https://back-end-crepes.vercel.app/usuarios', {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                usuarioNome: usuarioLogado,
+                produtoId: produto.id
+            }),
+        });
+
+        if (response.status === 200) {
+            alert("Produto removido do carrinho!");
+            location.reload()
+        } else {
+            alert("Erro ao remover do carrinho.");
+        }
+    } catch (error) {
+        console.error("Erro ao excluir os produtos do carrinho", error);
+    }
+}
