@@ -11,3 +11,22 @@ body{
 
     overflow: hidden;
 }
+
+@media screen and (max-width: 320px) {
+    body {
+        height: auto;
+        overflow: auto; /* Permite rolagem em telas pequenas */
+    }
+
+    #banners {
+        width: 400vw; /* se você usa 4 banners com 100vw cada */
+        transition: left 0.5s;
+    }
+
+    .btn_banner {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    /* Adapte outras seções conforme necessário */
+}
