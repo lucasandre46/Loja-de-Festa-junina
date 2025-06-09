@@ -35,7 +35,7 @@ export function recolheDadosLogin() {
 
     console.log(bdProprio);
 
-    if (nomeUx.value === "", turma.value === '', nChamada === '') {
+    if (nomeUx.value === "" || turma.value === "" || nChamada.value === "") {
         alert('Check se todos os campos estão preenchidos');
     } else {
         cadastrarUx(nomeUx.value, turma.value, nChamada.value,);
