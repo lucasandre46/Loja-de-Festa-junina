@@ -1,5 +1,5 @@
 import { pegarCartoes } from "./../../Controller/services/produtos_S.js";
-import { adicionarAoCarrinho } from"./../../Controller/login.js"
+import { adicionarAoCarrinho } from "./../../Controller/login.js"
 
 export async function criarCartoes() {
     const sectionCartoes = document.getElementById("sectionCartoes");
@@ -19,10 +19,11 @@ export async function criarCartoes() {
         nomeDesc.id = "nomeDesc";
 
         const titulo = document.createElement("h1");
-
+        titulo.id = "titulo";
         titulo.textContent = produtos[i].nome;
 
         const descricao = document.createElement("p");
+        descricao.id = "descricao";
         descricao.textContent = produtos[i].descricao;
 
         nomeDesc.appendChild(titulo);
