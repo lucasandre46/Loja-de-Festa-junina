@@ -81,7 +81,8 @@ header,
     cursor: pointer;
 }
 
-@media screen and (min-width: 393px), (min-width: 480px){
+@media screen and (max-width: 480px),
+(max-height: 882px) {
     header {
         width: 100vw;
         height: 10vh;
@@ -119,10 +120,5 @@ header,
         color: white;
 
         font-size: 0;
-    }
-
-    .btnsHead i{
-        font-size: 5vw;
-
     }
 }

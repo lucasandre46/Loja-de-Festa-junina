@@ -216,7 +216,7 @@ section {
 
     cursor: pointer;
 }
-@media screen and (min-width: 393px), (min-width: 480px) {
+@media screen and (max-width: 480px), (max-height: 882px) {
     section{
         width: 100vw;
     }
@@ -276,16 +276,6 @@ section {
 
     background-color: rgb(234, 29, 44);
     color: white;
-}
-
-.banner{
-    height: 100%;
-}
-
-#banners{
-
-   height: 65% ;
-
 }
 
 }
